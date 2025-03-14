@@ -20,7 +20,6 @@ v1 不支持 Vue v2，请参考 [常见问题](./faq#vue-2-支持情况)。
 
 - `compilerOptions.moduleResolution` 为 Bundler
 - `compilerOptions.types` 包含对应的类型，如 @uni-helper/uni-app-types、@uni-helper/uni-cloud-types、@uni-helper/uni-ui-types、@uni-helper/uni-types
-- `vueCompilerOptions.plugins` 包含 @uni-helper/uni-app-types/volar-plugin 或 @uni-helper/uni-types/volar-plugin
 - `include` 包含 Vue 相关源码文件
 
 以下是一个 `tsconfig.json` 示例，你可以直接复制它并粘贴到项目内。请注意，你可能需要稍微调整以匹配你的开发需求，相关依赖需要自行安装。
@@ -70,17 +69,6 @@ v1 不支持 Vue v2，请参考 [常见问题](./faq#vue-2-支持情况)。
       // 配置了这个就不需要配置前面三个 // [!code ++]
       // "@uni-helper/uni-types" // [!code ++]
     ]
-  },
-  "vueCompilerOptions": {
-    // 不需要指定 target、experimentalRuntimeMode 和 nativeTags // [!code --]
-    "target": "3", // [!code --]
-    "experimentalRuntimeMode": "runtime-uni-app", // [!code --]
-    "nativeTags": ["block", "component", "template", "slot"], // [!code --]
-    // 调整 Volar（Vue 语言服务工具）解析行为 // [!code ++]
-    // 用于为 uni-app 组件提供 TypeScript 类型 // [!code ++]
-    "plugins": ["@uni-helper/uni-app-types/volar-plugin"] // [!code ++]
-    // 也可以使用 @uni-helper/uni-types/volar-plugin // [!code ++]
-    // "plugins": ["@uni-helper/uni-types/volar-plugin"] // [!code ++]
   },
   "include": [
     "src/**/*.ts",
